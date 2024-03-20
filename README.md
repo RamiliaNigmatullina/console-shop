@@ -11,7 +11,7 @@ Console Shop is a console-based application tailored for purchasing products whi
 1. Clone the repository:
 
 ```bash
-git clone git://github.com/RamiliaNigmatullina/console-shop.git
+git clone git@github.com:RamiliaNigmatullina/console-shop.git && cd console-shop
 ```
 
 2. Run the setup script:
