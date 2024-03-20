@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+Bundler.require(:default)
+
+require_relative "../app/formatters/price_formatter"
+require_relative "../app/formatters/products_formatter"
+require_relative "../app/services/price_calculator"
+
+# Initialize stubbed data
+require_relative "../db/seeds.rb"
+products && promotions
+
+print ProductsFormatter.new(products)
+print "\n\nEnter the codes of the selected products separated by commas (e.g. GR1,CF1,SR1,CF1,CF1): "
+
+basket = gets.chomp.split(",").map(&:strip)
+total = PriceCalculator.new(products: products, promotions: promotions, basket: basket).total
+
+print PriceFormatter.new(total)
+print "\n\n"
