@@ -38,6 +38,36 @@ RSpec.describe PriceCalculator do
 
         it { is_expected.to eq(6.22) }
       end
+
+      context "with buy 3 get 2 promotion" do
+        let(:promotion1) { build :promotion, :bogo, buy: 3, get: 2 }
+
+        it { is_expected.to eq(6.22) }
+
+        context "with 5 items" do
+          let(:basket) { %w[GR1 GR1 GR1 GR1 GR1] }
+
+          it { is_expected.to eq(9.33) }
+        end
+
+        context "with 7 items" do
+          let(:basket) { %w[GR1 GR1 GR1 GR1 GR1 GR1 GR1] }
+
+          it { is_expected.to eq(15.55) }
+        end
+      end
+
+      context "with buy 1 get 2 promotion" do
+        let(:promotion1) { build :promotion, :bogo, get: 2 }
+
+        it { is_expected.to eq(6.22) }
+
+        context "with 3 items" do
+          let(:basket) { %w[GR1 GR1 GR1] }
+
+          it { is_expected.to eq(3.11) }
+        end
+      end
     end
 
     context "with fixed bulk discount promotion" do

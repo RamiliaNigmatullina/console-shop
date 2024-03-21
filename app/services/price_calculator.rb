@@ -38,7 +38,10 @@ class PriceCalculator
   end
 
   def apply_bogo_promotion(product, promotion, quantity)
-    product.price * (quantity / (promotion.buy + promotion.get) + quantity % (promotion.buy + promotion.get))
+    product.price * (
+      quantity / (promotion.buy + promotion.get) * promotion.buy +
+      quantity % (promotion.buy + promotion.get)
+    )
   end
 
   def apply_bulk_promotion(product, promotion, quantity)
