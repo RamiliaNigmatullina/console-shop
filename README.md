@@ -41,6 +41,12 @@ bin/rspec
   * all items at a fixed price (e.g. "4.50€"), or
   * a percentage discount is applied to them (e.g. 66.66%).
 
+**Available promotions:**
+
+* When purchasing green tea, get the second green tea for free.
+* When purchasing 3 or more packs of strawberries, the price for each pack is €4.5.
+* When purchasing 3 or more packs of coffee, the price for each pack is 2/3 of the original.
+
 ## Additional Comments
   * To simplify the logic, the money gem for handling monetary values was not used in the application.
   * Each product can only participate in one promotion. If multiple promotions apply to a product, only the first one is applied. This behavior is designed for simplicity but can be easily modified to evaluate multiple promotions and apply the most beneficial one.
