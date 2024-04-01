@@ -32,7 +32,7 @@ FactoryBot.define do
       kind { "bulk" }
       bulk_kind { "percentage" }
       min_quantity { 3 }
-      discount { 66.66 }
+      discount { 66.6666666666666666 }
     end
   end
 end
